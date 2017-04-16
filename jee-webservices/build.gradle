@@ -1,0 +1,41 @@
+
+apply plugin: 'java'
+apply plugin: 'war'
+
+apply plugin: 'eclipse'
+apply plugin: 'eclipse-wtp'
+
+
+
+// In this section you declare where to find the dependencies of your project
+repositories {
+    jcenter()
+}
+
+dependencies {
+	compileOnly 'javax.servlet:javax.servlet-api:3.1.0'
+	
+	compile group: 'com.sun.jersey', name: 'jersey-core', version: '1.19.3'    // An implementation of JAX-RS
+	compile group: 'com.sun.jersey', name: 'jersey-server', version: '1.19.3'  
+	compile group: 'com.sun.jersey', name: 'jersey-servlet', version: '1.19.3'
+	
+
+	compile group: 'com.sun.jersey', name: 'jersey-json', version: '1.19.3'    // convert objects in json
+
+	
+	
+    // Use JUnit test framework
+    testCompile 'junit:junit:4.12'
+}
+
+// The name of the web application source directory, relative to the project directory. 
+webAppDirName = 'src/main/resources'
+
+eclipse {
+	project{
+		natures 'org.eclipse.buildship.core.gradleprojectnature'
+	}
+	classpath {
+   		downloadSources=true
+	}
+}
