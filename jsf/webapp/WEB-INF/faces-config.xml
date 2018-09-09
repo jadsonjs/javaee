@@ -7,5 +7,20 @@
     <application>
   		<el-resolver>br.ufrn.view.customScope.infra.CustomScopeELResolver</el-resolver>
  	</application>
+ 	
+ 	
+ 	<!--
+ 	 Navegation rule from index.hxtml page. the login  
+	-->
+	
+	<navigation-rule>  
+   		 <from-view-id>/index.xhtml</from-view-id>  
+    		<navigation-case>  
+        		<from-outcome>home_page</from-outcome>  
+        		<to-view-id>/pages/home/home.xhtml</to-view-id>  
+        		<redirect />  
+    		</navigation-case>  
+	</navigation-rule>
+    
     
 </faces-config>

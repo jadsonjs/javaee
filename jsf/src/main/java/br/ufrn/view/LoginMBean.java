@@ -26,9 +26,23 @@ public class LoginMBean {
 	
 	public String password;
 	
+	/**
+	 * Represent a logon action
+	 * @return
+	 */
 	public String logar(){
-		addInfoMessage("Sucess!!!");
-		return null;
+		
+		/* Here usually we go to database */
+		
+		if("admin".equals(login) && "admin".equals(password)) {
+			
+			addInfoMessage("Sucess!!!");
+			return "home_page";   // @see faces-config.xml
+			
+		}else {
+			addErrorMessage("Login/Password invalid! ");
+			return null;
+		}
 	}
 	
     public String getMessage() {
@@ -37,8 +51,15 @@ public class LoginMBean {
     
     public void addInfoMessage(String mensagem) {
 		FacesContext.getCurrentInstance()
-			.addMessage("normal", new FacesMessage(FacesMessage.SEVERITY_INFO, "Informação", mensagem)); 
+			.addMessage("normal", new FacesMessage(FacesMessage.SEVERITY_INFO, "Information", mensagem)); 
 	}
+    
+    public void addErrorMessage(String mensagem) {
+		FacesContext.getCurrentInstance()
+			.addMessage("normal", new FacesMessage(FacesMessage.SEVERITY_ERROR, "Error", mensagem)); 
+	}
+    
+    
 
 	public String getLogin() {return login;}
 	public void setLogin(String login) {this.login = login;}

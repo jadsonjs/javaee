@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+   <title>PrimeFaces Example</title>
+</h:head>
+
+<h:body>
+
+	<h:form id="form">
+	
+		
+	
+		<br/><br/><br/>
+	
+	    <h1> Home </h1>
+	   
+	
+		<div class="ui-g" style="width: 90%">
+		    <div class="ui-g-12 ui-md-6 ui-lg-4">
+		    	<p:commandButton value="Ajax" id="b1" action="/pages/ajax/ajax.xhtml?faces-redirect=true" ajax="false" />
+		     </div>
+		      <div class="ui-g-12 ui-md-6 ui-lg-4">
+		    	<p:commandButton value="Converters" id="b2" action="/pages/converters/converters.xhtml?faces-redirect=true" ajax="false" />
+		     </div>  
+		     <div class="ui-g-12 ui-md-6 ui-lg-4">
+		    	<p:commandButton value="Custom Scope" id="b3" action="/pages/customScope/menu.xhtml?faces-redirect=true" ajax="false" />	
+		     </div> 
+		     <div class="ui-g-12 ui-md-6 ui-lg-4">
+		    	<p:commandButton value="Facelets Default Page" id="b4" action="/pages/facelets/default.xhtml?faces-redirect=true" ajax="false" />
+		     </div>
+		     <div class="ui-g-12 ui-md-6 ui-lg-4">
+		    	<p:commandButton value="Facelests Modifield Page" id="b5" action="/pages/facelets/modified.xhtml?faces-redirect=true" ajax="false" />
+		     </div>
+		      <div class="ui-g-12 ui-md-6 ui-lg-4">
+		    	<p:commandButton value="Intenationalization" id="b6" action="/pages/internationalization/internationalization.xhtml?faces-redirect=true" ajax="false" />
+		     </div>  
+		     <div class="ui-g-12 ui-md-6 ui-lg-4">
+		    	<p:commandButton value="PrimeFaces" id="b7" action="/pages/primefaces/primefaces.xhtml?faces-redirect=true" ajax="false" />	
+		     </div>   
+		     <div class="ui-g-12 ui-md-6 ui-lg-4">
+		    	<p:commandButton value="Validators" id="b8" action="/pages/validators/validator.xhtml?faces-redirect=true" ajax="false" />	
+		     </div>       
+		</div>
+
+	 
+	</h:form>
+
+
+</h:body>
+
+</html>

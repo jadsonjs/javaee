@@ -17,6 +17,8 @@
 
 	<h:form id="form">
 	
+		
+	
 		<br/><br/><br/>
 	
 	    <h1>Primefaces Examples</h1>
@@ -30,8 +32,8 @@
 		
 		<br/><br/><br/><br/><br/><br/>
 	 
-		<p:commandButton value="Show" onclick="PF('bar').show()" type="button" icon="ui-icon-arrow-1-s"/>
-		<p:commandButton value="Hide" onclick="PF('bar').hide()" type="button" icon="ui-icon-arrow-1-n"/>
+		<p:commandButton value="Show Notification" onclick="PF('bar').show()" type="button" icon="ui-icon-arrow-1-s"/>
+		<p:commandButton value="Hide Notification" onclick="PF('bar').hide()" type="button" icon="ui-icon-arrow-1-n"/>
 
 		<br/><br/><br/>
 		
@@ -58,22 +60,64 @@
 		
         
         <br/><br/><br/>
+ 
+ 		<p:growl id="messages" showDetail="true"/>
+        
+        <h3>Responsive Grid </h3>
+		<div class="ui-g" style="width: 90%">
+		    <div class="ui-g-12 ui-md-6 ui-lg-4">
+		    		
+		    		<!-- painel Menu -->
 
-		<!-- Carousel -->
+					<p:menuButton value="Options">
+				        <p:menuitem value="Save"   actionListener="#{primeFacesMBean.save}" update="messages" icon="ui-icon-disk"/>
+				        <p:menuitem value="Update" actionListener="#{primeFacesMBean.update}" update="messages" icon="ui-icon-arrowrefresh-1-w"/>
+				        <p:menuitem value="Delete" actionListener="#{primeFacesMBean.delete}" ajax="false" icon="ui-icon-close"/>
+				        <p:separator />
+				        <p:menuitem value="Homepage" url="http://www.primefaces.org" icon="ui-icon-extlink"/>
+				    </p:menuButton>
+		    		
+		    </div>
+		    <div class="ui-g-12 ui-md-6 ui-lg-4">
+		    
+		    	<!-- Carousel -->
 
     
-	    <p:carousel value="#{primeFacesMBean.people}" headerText="Responsive" var="person" itemStyle="text-align:center" responsive="true">
-	        <p:panelGrid columns="2" style="width:100%;margin:10px 0px" columnClasses="label,value" layout="grid" styleClass="ui-panelgrid-blank">
-	            <h:outputText value="Name" />
-	            <h:outputText value="#{person.name}" />
-	        </p:panelGrid>
+			    <p:carousel value="#{primeFacesMBean.people}" headerText="Responsive" var="person" itemStyle="text-align:center" responsive="true">
+			        <p:panelGrid columns="2" style="width:100%;margin:10px 0px" columnClasses="label,value" layout="grid" styleClass="ui-panelgrid-blank">
+			            <h:outputText value="Name" />
+			            <h:outputText value="#{person.name}" />
+			        </p:panelGrid>
+			 
+			        <f:facet name="footer">
+			                In total there are #{fn:length(primeFacesMBean.people)} people.
+			        </f:facet>
+			    </p:carousel>
+		    
+		    </div>
+		    <div class="ui-g-12 ui-md-6 ui-lg-4">
+		    		<!-- carroussel of imagens -->
 	 
-	        <f:facet name="footer">
-	                In total there are #{fn:length(primeFacesMBean.people)} people.
-	        </f:facet>
-	    </p:carousel>
+				 	<p:galleria value="#{primeFacesMBean.imagesNames}" var="imageName" panelWidth="500" panelHeight="313" showCaption="true">
+			    		<p:graphicImage name="img/pictures/#{imageName}" alt="Image Description for #{imageName}" title="#{imageName}"/>
+					</p:galleria>
+		    </div>
+		</div>
+ 
+
+		
+
+
+		
 	    
 	    <br/><br/><br/>
+	    
+	    <!-- charts -->
+	 
+	 	<p:chart type="bar" model="#{primeFacesMBean.barModel}" style="height:300px" responsive="true"/>
+	 
+	 
+
 	 
 	</h:form>
 

@@ -8,12 +8,19 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 
 <head>
-   <title>JSF Login!</title>
+   <title>JSF Application!</title>
 </head>
 <body>
    
    <div style="text-align: center; width: 100%">
    		#{loginMBean.message}
+   </div>
+   
+   <div style="text-align: justify; font-size: x-large; width: 60%;">
+   		<p>This is a mock application using <span style="font-weight:bold;">Java Server Pages </span> </p>
+   		<p><i>This program is distributed without any warranty and it
+        can be freely redistributed for research, classes or private studies, 
+        since the copyright notices are not removed.</i></p>
    </div>
    
    
@@ -27,12 +34,14 @@
 					<th><h:outputText value="Login" />:</th>
 					<td style="text-align: left;">
 						<h:inputText id="login" value="#{loginMBean.login}" size="20" maxlength="30" />
+						(admin)
 					</td>
 				</tr>
 				<tr>
 					<th><h:outputText value="Password" />:</th>
 					<td style="text-align: left;">
 						<h:inputSecret id="senhaParticipante" value="#{loginMBean.password}" size="20" maxlength="50" />
+						(admin)
 					</td>
 				</tr>
 			</tbody>
