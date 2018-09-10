@@ -12,11 +12,8 @@
 </head>
 <body>
    
-   <div style="text-align: center; width: 100%">
-   		#{loginMBean.message}
-   </div>
    
-   <div style="text-align: justify; font-size: x-large; width: 60%;">
+   <div style="text-align: justify; font-size: x-large; width: 100%;">
    		<p>This is a mock application using <span style="font-weight:bold;">Java Server Pages </span> </p>
    		<p><i>This program is distributed without any warranty and it
         can be freely redistributed for research, classes or private studies, 
@@ -28,11 +25,11 @@
    
    		<h:messages showDetail="true" infoStyle="color:green;" errorStyle="color:red;" warnStyle="color:yellow;"  fatalStyle="color:darkred;"/>
    		  
-		<table class="tabelaLogin" style="width: 100%; margin-bottom: 10px;">
+		<table class="tabelaLogin" style="width: 70%; margin-bottom: 10px; margin-left: auto; margin-right: auto;">
 			<tbody>
 				<tr>
-					<th><h:outputText value="Login" />:</th>
-					<td style="text-align: left;">
+					<th style="width: 40%;"><h:outputText value="Login" />:</th>
+					<td style="text-align: left; width: 60%;">
 						<h:inputText id="login" value="#{loginMBean.login}" size="20" maxlength="30" />
 						(admin)
 					</td>
